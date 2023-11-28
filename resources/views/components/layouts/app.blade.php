@@ -12,7 +12,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="antialiased">
+<body class="antialiased text-gray-800">
     {{ $slot }}
 </body>
 

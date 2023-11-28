@@ -7,7 +7,7 @@ export default {
         extend: {
             aspectRatio: {
                 photo: '3/2'
-            }            
+            }
         }
     },
     plugins: []

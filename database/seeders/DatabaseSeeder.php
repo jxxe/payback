@@ -18,11 +18,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         if(App::environment() !== 'production') {
-            User::factory(10)->has(
+            User::factory()->has(
                 Envelope::factory(5)->has(
                     Receipt::factory(10)
                 )
-            )->create();
+            )->create([
+                'name' => 'Jerome Paulos',
+                'email' => 'itsjeromepaulos@gmail.com'
+            ]);
         }
     }
 }

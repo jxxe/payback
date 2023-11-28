@@ -11,10 +11,17 @@ class EnvelopeCard extends Component
     #[Locked]
     public Envelope $envelope;
 
-    public function rename(string $name)
+    public string $newName;
+
+    public function mount()
+    {
+        $this->newName = $this->envelope->name;
+    }
+
+    public function rename()
     {
         $this->authorize('update', $this->envelope);
-        $this->envelope->update(['name' => $name]);
+        $this->envelope->update(['name' => $this->newName]);
     }
 
     public function render()
