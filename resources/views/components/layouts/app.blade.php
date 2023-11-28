@@ -1,4 +1,6 @@
-@props(['title'])
+@props([
+    'title' => 'Untitled'
+])
 
 <!DOCTYPE html>
 <html lang="en">
