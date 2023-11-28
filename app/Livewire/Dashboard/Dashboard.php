@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Dashboard;
 
-use Illuminate\Http\Request;
+use App\Models\Envelope;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -10,29 +10,24 @@ use Livewire\Component;
 class Dashboard extends Component
 {
     #[Locked]
-    public array $envelopes = [];
+    public $envelopes = [];
 
     public function mount()
     {
         $this->envelopes = auth()->user()->envelopes;
     }
 
-    public function deleteEnvelope(Envelope $envelope)
+    public function delete(Envelope $envelope)
     {
         $this->authorize('delete', $envelope);
         $envelope->delete();
     }
 
-    public function archiveEnvelope(Envelope $envelope, bool $newValue)
+    public function archive(Envelope $envelope)
     {
         $this->authorize('update', $envelope);
-        $envelope->update(['archived' => $newValue]);
-    }
-
-    public function renameEnvelope(Envelope $envelope, string $newName)
-    {
-        $this->authorize('update', $envelope);
-        $envelope->update(['name' => $newName]);
+        $envelope->archived = !$envelope->archived;
+        $envelope->update();
     }
 
     #[Title('Dashboard — Payback')]
