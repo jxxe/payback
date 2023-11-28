@@ -12,4 +12,14 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $hidden = ['remember_token'];
+
+    public function receipts()
+    {
+        return $this->hasManyThrough(Receipt::class, Envelope::class);
+    }
+
+    public function envelopes()
+    {
+        return $this->hasMany(Envelope::class);
+    }
 }
