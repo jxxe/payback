@@ -7,3 +7,7 @@
         0 1px 1px theme('colors.black / 20%'),
         inset 0 1px theme('colors.white / 40%');
 }
+
+.squish {
+    @apply active:scale-95 transition-transform;
+}

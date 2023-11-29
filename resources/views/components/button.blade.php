@@ -9,7 +9,7 @@
 
 <{{ $tag }} {{ $attributes }}>
     <div @class([
-        'glint active:scale-95 transition-transform shadow py-1.5 px-2.5 rounded border bg-gradient-to-b',
+        'glint squish shadow py-1.5 px-2.5 rounded border bg-gradient-to-b',
         'font-semibold leading-none text-white text-sm',
         'border-sky-800 from-sky-500 to-sky-600' => $color === 'blue',
         'border-accent-800 from-accent-500 to-accent-600' => $color === 'accent',
