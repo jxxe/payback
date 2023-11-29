@@ -26,7 +26,7 @@
                 <p class="font-mono text-xs">
                     {{ $commit['hash'] }}
                     <span class="text-gray-400">•</span>
-                    {{ $commit['date']->diffForHumans(short: true) }}
+                    <time datetime="{{ $commit['date'] }}">{{ $commit['date']->diffForHumans(short: true) }}</time>
                     <span class="text-gray-400">•</span>
                     <span class="text-green-500">+{{ $commit['additions'] }}</span>
                     <span class="text-red-500">-{{ $commit['deletions'] }}</span>
