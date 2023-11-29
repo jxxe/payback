@@ -6,7 +6,7 @@ use App\Models\Envelope;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
 
-class EnvelopeCard extends Component
+class EnvelopeRow extends Component
 {
     #[Locked]
     public Envelope $envelope;
@@ -26,6 +26,6 @@ class EnvelopeCard extends Component
 
     public function render()
     {
-        return view('livewire.dashboard.envelope-card');
+        return view('livewire.dashboard.envelope-row');
     }
 }
