@@ -1,9 +1,17 @@
-<div class="max-w-screen-sm mx-auto p-8">
-    <div class="bg-gray-200 rounded-lg shadow-xl overflow-clip grid gap-[1px] grid-cols-2">
-        @foreach($envelopes as $envelope)
-            <div class="p-4 bg-white">
+<div class="space-y-4">
+    <x-card class="divide-y">
+        @foreach($envelopes->where('archived', false) as $envelope)
+            <div class="p-4">
                 <livewire:dashboard.envelope-row :$envelope :key="$envelope->id"/>
             </div>
         @endforeach
-    </div>
+    </x-card>
+
+    <x-card class="divide-y">
+        @foreach($envelopes->where('archived') as $envelope)
+            <div class="p-4">
+                <livewire:dashboard.envelope-row :$envelope :key="$envelope->id"/>
+            </div>
+        @endforeach
+    </x-card>
 </div>

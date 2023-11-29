@@ -22,7 +22,10 @@ module.exports = {
             },
             colors: {
                 gray: colors.neutral,
-                accent: colors.sky
+                accent: {
+                    DEFAULT: colors.sky[600],
+                    ...colors.sky
+                }
             }
         }
     },

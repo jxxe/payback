@@ -3,6 +3,7 @@
 namespace App\Livewire\Dashboard;
 
 use App\Models\Envelope;
+use Livewire\Attributes\Layout;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Component;
@@ -23,6 +24,7 @@ class Dashboard extends Component
     }
 
     #[Title('Dashboard — Payback')]
+    #[Layout('components.layouts.default')]
     public function render()
     {
         return view('livewire.dashboard.dashboard', [
