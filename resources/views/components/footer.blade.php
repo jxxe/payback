@@ -21,7 +21,7 @@
         <a href="{{ $commit['url'] }}" class="squish" target="_blank">
             <div class="text-right leading-none space-y-2">
                 <p class="text-[0.65rem] text-gray-500 uppercase">Most Recent Commit</p>
-                <p title="{{ $commit['message'] }}">“{{ str($commit['message'])->limit(30) }}”</p>
+                <p title="{{ $commit['message'] }}">{{ str($commit['message'])->limit(30) }}</p>
     
                 <p class="font-mono text-xs">
                     {{ $commit['hash'] }}
