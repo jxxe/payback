@@ -10,20 +10,31 @@ module.exports = {
     },
     theme: {
         extend: {
-            borderColor: {
-                DEFAULT: colors.neutral[400]
-            },
             fontFamily: {
-                sans: ['"Univers"', '"Helvetica Neue"', '"Avenir"', 'sans-serif'],
-                mono: ['"Berkeley Mono"', '"Menlo"', 'monospace']
+                sans: [
+                    'Inter, sans-serif',
+                    { fontFeatureSettings: '"ss04"' }
+                ]
             },
-            borderWidth: {
-                3: 3
+            aspectRatio: {
+                photo: '3/2'
             },
             colors: {
-                gray: colors.neutral
+                gray: colors.neutral,
+                accent: colors.sky
             }
         }
     },
-    plugins: []
+    plugins: [
+        require('tailwindcss/plugin')(api => {
+            api.addVariant('em', variant => {
+                variant.container.walkRules(rule => {
+                    rule.selector = `.em\\:${rule.selector.slice(1)}`;
+                    rule.walkDecls(decl => {
+                        decl.value = decl.value.replace('rem', 'em');
+                    });
+                });
+            });
+        })
+    ]
 }

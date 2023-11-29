@@ -2,25 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.arrow-top {
-    --width: theme('spacing.2');
-    --border: theme('borderWidth.DEFAULT');
-
-    &::before, &::after {
-        @apply absolute border border-transparent w-0 h-0 pointer-events-none left-1/2;
-        bottom: calc(100% - var(--border));
-        content: '';
-    }
-
-    &::before {
-        border-bottom-color: theme('borderColor.DEFAULT');
-        border-width: calc(var(--width) + var(--border));
-        margin-left: calc((var(--width) + var(--border)) * -1);
-    }
-
-    &::after {
-        @apply border-b-white;
-        border-width: var(--width);
-        margin-left: calc(var(--width) * -1);
-    }
+.glint {
+    box-shadow:
+        0 1px 1px theme('colors.black / 20%'),
+        inset 0 1px theme('colors.white / 40%');
 }

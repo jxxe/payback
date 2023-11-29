@@ -9,14 +9,6 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    #[Locked]
-    public $envelopes = [];
-
-    public function mount()
-    {
-        $this->envelopes = auth()->user()->envelopes;
-    }
-
     public function delete(Envelope $envelope)
     {
         $this->authorize('delete', $envelope);
@@ -33,6 +25,8 @@ class Dashboard extends Component
     #[Title('Dashboard — Payback')]
     public function render()
     {
-        return view('livewire.dashboard.dashboard');
+        return view('livewire.dashboard.dashboard', [
+            'envelopes' => auth()->user()->envelopes
+        ]);
     }
 }

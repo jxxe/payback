@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         if(App::environment() !== 'production') {
             User::factory()->has(
-                Envelope::factory(5)->has(
-                    Receipt::factory(10)
+                Envelope::factory(10)->has(
+                    Receipt::factory(15)
                 )
             )->create([
                 'name' => 'Jerome Paulos',
