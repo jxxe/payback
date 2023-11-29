@@ -27,7 +27,7 @@
         @endunless
 
         <x-button
-            icon="archive-box"
+            icon="{{ $envelope->archived ? 'unarchive' : 'archive' }}"
             color="orange"
             wire:click="$parent.archive({{ $envelope->id }})"
         />
@@ -41,7 +41,7 @@
 
         <x-popover anchor="deleteButton" show="showDelete">
             <div class="p-2 flex gap-2">
-                <x-button x-on:click="showDelete = false" text="Cancel"/>
+                <x-button x-on:click="showDelete = false" text="Cancel" color="gray"/>
                 <x-button wire:click="$parent.delete({{ $envelope->id }})" text="Delete" color="red" icon="trash"/>
             </div>
         </x-popover>
