@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -12,7 +13,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: [
-                    'Inter, sans-serif',
+                    ['Inter', ...fontFamily.sans],
                     { fontFeatureSettings: '"ss04"' }
                 ]
             },
