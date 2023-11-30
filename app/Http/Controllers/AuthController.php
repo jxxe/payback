@@ -29,7 +29,7 @@ class AuthController extends Controller
             'avatar' => $googleUser->avatar
         ]);
 
-        auth()->login($user);
+        auth()->login($user, true);
 
         return redirect()->route('dashboard');
     }

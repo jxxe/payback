@@ -31,11 +31,6 @@ class Category extends Model
             'qualified' => false
         ],
         [
-            'id' => 5,
-            'name' => '',
-            'qualified' => false
-        ],
-        [
             'id' => 999,
             'name' => 'Other',
             'qualified' => false

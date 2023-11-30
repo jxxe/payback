@@ -15,7 +15,7 @@
                 <p class="text-[0.65rem] text-center text-gray-500 uppercase">Create New</p>
                 <div class="flex gap-2 items-center">
                     <x-button text="Envelope" color="gray" icon="envelope-open"/>
-                    <x-button text="Receipt" icon="receipt"/>
+                    <livewire:new-receipt/>
                 </div>
             </div>
         </x-card>
@@ -27,5 +27,5 @@
         <x-card class="mt-auto rounded-b-none p-4">
             <x-footer/>
         </x-card>
-    </div>    
+    </div>
 </x-layouts.app>

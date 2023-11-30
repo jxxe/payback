@@ -18,4 +18,9 @@ class Envelope extends Model
     {
         return $this->hasMany(Receipt::class);
     }
+
+    public static function unarchived()
+    {
+        return self::where('archived', false);
+    }
 }
