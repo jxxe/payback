@@ -18,10 +18,9 @@ class ReceiptFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->sentence(4),
             'store' => fake()->company(),
             'amount' => fake()->numberBetween(1_00, 50_00),
-            'description' => fake()->paragraph(),
+            'description' => fake()->sentence(),
             'category_id' => Category::inRandomOrder()->first(),
             'archived' => fake()->boolean(10)
         ];

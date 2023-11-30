@@ -3,7 +3,7 @@
 @php($ref = "\$refs.$anchor")
 
 <div x-transition class="pt-3 z-50" x-cloak x-show="{{ $show }}" x-anchor="{{ $ref }}" x-on:click.outside="{{ $show }} = false">
-    <div class="bg-white rounded-lg shadow-lg border max-w-sm overflow-clip">
+    <div class="bg-white rounded-lg shadow-lg border max-w-xs overflow-clip">
         {{ $slot }}
     </div>
 </div>

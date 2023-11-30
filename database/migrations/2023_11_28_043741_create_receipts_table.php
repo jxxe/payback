@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
             $table->string('store');
             $table->integer('amount');
             $table->text('description')->default('');
