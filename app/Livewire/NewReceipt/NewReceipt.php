@@ -2,16 +2,16 @@
 
 namespace App\Livewire\NewReceipt;
 
-use App\Livewire\Forms\ReceiptForm;
-use App\Models\Category;
-use Exception;
-use Livewire\Attributes\Layout;
-use Livewire\Attributes\Title;
-use Livewire\Attributes\Validate;
-use Livewire\Component;
-use Livewire\WithFileUploads;
 use OpenAI;
+use Livewire\WithFileUploads;
+use Livewire\Component;
+use Livewire\Attributes\Validate;
+use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
 use Illuminate\Support\Str;
+use Exception;
+use App\Models\Category;
+use App\Livewire\Forms\ReceiptForm;
 
 class NewReceipt extends Component
 {
@@ -43,7 +43,7 @@ class NewReceipt extends Component
             ->map(fn($category) => "`$category->slug`: $category->keywords")
             ->join("; ");
 
-        $client = OpenAI::client(config('openai.key'));
+        $client = OpenAI::client(config('apis.openai'));
         $response = $client->chat()->create([
             'model' => 'gpt-4-vision-preview',
             'max_tokens' => 1000,
@@ -110,7 +110,7 @@ class NewReceipt extends Component
         $this->autofillSeconds = microtime(true) - $startTime;
     }
 
-    public function create()
+    public function store()
     {
         $this->form->image = $this->image->storePublicly('receipts');
         $this->form->validate();
