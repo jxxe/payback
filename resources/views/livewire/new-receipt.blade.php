@@ -77,7 +77,7 @@
                     @endif
 
                     <div class="ml-auto">
-                        <x-button text="Create"/>
+                        <x-button text="Add"/>
                     </div>
                 </div>
             </x-card>

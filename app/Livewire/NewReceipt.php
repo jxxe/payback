@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\NewReceipt;
+namespace App\Livewire;
 
 use OpenAI;
 use Livewire\WithFileUploads;
@@ -117,11 +117,11 @@ class NewReceipt extends Component
         $this->form->store();
     }
 
-    #[Title('Create Receipt — Payback')]
+    #[Title('Add Receipt — Payback')]
     #[Layout('components.layouts.default')]
     public function render()
     {
-        return view('livewire.new-receipt.new-receipt', [
+        return view('livewire.new-receipt', [
             'envelopes' => auth()->user()->envelopes,
             'categories' => Category::all()
         ]);
