@@ -43,7 +43,7 @@ class NewReceipt extends Component
             ->map(fn($category) => "`$category->slug`: $category->keywords")
             ->join("; ");
 
-        $client = OpenAI::client(config('apis.openai'));
+        $client = OpenAI::client(config('openai.key'));
         $response = $client->chat()->create([
             'model' => 'gpt-4-vision-preview',
             'max_tokens' => 1000,
