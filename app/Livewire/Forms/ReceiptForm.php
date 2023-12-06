@@ -20,7 +20,7 @@ class ReceiptForm extends Form
     #[Validate('nullable')]
     public $description = '';
 
-    #[Validate('nullable|image')]
+    #[Validate('nullable')]
     public $image = '';
 
     #[Validate('required|exists:App\Models\Category,id', as: 'category')]

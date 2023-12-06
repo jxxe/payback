@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('avatar');
             $table->string('email')->unique();
+            $table->boolean('can_use_ai')->default(false);
 
             $table->rememberToken();
             $table->timestamps();

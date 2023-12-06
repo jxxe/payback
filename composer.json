@@ -12,7 +12,9 @@
         "laravel/sanctum": "^3.3",
         "laravel/socialite": "^5.10",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.2"
+        "league/flysystem-aws-s3-v3": "^3.0",
+        "livewire/livewire": "^3.2",
+        "openai-php/client": "^0.8.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

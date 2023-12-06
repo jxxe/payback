@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('store');
             $table->integer('amount');
             $table->text('description')->default('');
-            $table->string('file')->nullable();
+            $table->string('image')->nullable();
             $table->foreignIdFor(Category::class);
             $table->boolean('archived')->default(false);
             $table->foreignIdFor(Envelope::class)->constrained()->cascadeOnDelete();

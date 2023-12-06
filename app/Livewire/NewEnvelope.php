@@ -30,7 +30,7 @@ class NewEnvelope extends Component
 
                 <x-popover anchor="button" show="show">
                     <form wire:submit="store" class="p-2 flex gap-2">
-                        <x-input wire:model="name" placeholder="New Envelope..." icon="envelope-open"/>
+                        <x-input required wire:model="name" placeholder="New Envelope..." icon="envelope-open"/>
                         <x-button text="Create"/>
                     </form>
                 </x-popover>

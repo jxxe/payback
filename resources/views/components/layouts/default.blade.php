@@ -15,7 +15,7 @@
                 <p class="text-[0.65rem] text-center text-gray-500 uppercase">Create New</p>
                 <div class="flex gap-2 items-center">
                     <livewire:new-envelope/>
-                    <x-button text="Receipt" icon="receipt"/>
+                    <x-button wire:navigate href="{{ route('receipts.create') }}" text="Receipt" icon="receipt"/>
                 </div>
             </div>
         </x-card>

@@ -1,8 +1,4 @@
 <div class="space-y-4" x-on:refresh-dashboard.window="$wire.$refresh()">
-    <x-card>
-        {{ now() }}
-    </x-card>
-
     <x-card class="divide-y">
         @foreach($envelopes->where('archived', false) as $envelope)
             <div class="p-4" wire:key="{{ $envelope->id }}">
