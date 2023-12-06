@@ -1,4 +1,4 @@
-<div x-data="{ show: false }">
+<div x-data="{ show: true }">
     <x-button text="Receipt" icon="receipt" x-ref="button" x-on:click="show = true"/>
 
     <x-popover anchor="button" show="show">
@@ -28,6 +28,8 @@
                     <option value="{{ $envelope->id }}">{{ $envelope->name }}</option>
                 @endforeach
             </x-select>
+
+            <x-file-upload accept=".png,.jpg,.jpeg,.pdf"/>
 
             <x-button text="Create" class="w-full"/>
         </form>
