@@ -4,7 +4,6 @@ namespace App\Livewire\Dashboard;
 
 use App\Models\Envelope;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
