@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.glint {
-    box-shadow:
-        0 0 1px theme('colors.black / 20%'),
-        inset 0 1px theme('colors.white / 40%');
-}
+@layer utilities {
+    .glint {
+        box-shadow:
+            0 0 1px theme('colors.black / 20%'),
+            inset 0 1px theme('colors.white / 40%');
+    }
+    
+    .squish {
+        @apply active:scale-95 transition-transform;
+    }
 
-.squish {
-    @apply active:scale-95 transition-transform;
+    .animate-scan {
+        @apply relative;
+
+        &::before {
+            @apply w-full h-2 absolute top-0 left-0;
+            @apply bg-gradient-to-b from-transparent via-red-500/75 to-transparent;
+
+            animation: scan 2s ease-in-out infinite alternate;
+            content: '';
+    
+            @keyframes scan {
+                100% {
+                    @apply top-full -translate-y-full;
+                }
+            }
+        }
+    }
 }

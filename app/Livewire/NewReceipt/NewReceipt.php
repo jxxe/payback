@@ -23,13 +23,15 @@ class NewReceipt extends Component
     #[Validate('image|max:3000')] // 3MB
     public $image;
 
-    public float $autofillCost;
+    public float $autofillCents;
     public ?bool $autofillSuccess;
+    public float $autofillSeconds;
 
     public function autofill()
     {
         $this->authorize('use-ai');
         $this->autofillSuccess = null;
+        $startTime = microtime(true);
 
         // $url = sprintf(
         //     'https://wsrv.nl/?url=%s&w=512&h=512',
@@ -104,8 +106,8 @@ class NewReceipt extends Component
         }
         
         // https://help.openai.com/en/articles/7127956-how-much-does-gpt-4-cost
-        // https://platform.openai.com/docs/guides/vision/calculating-costs
-        $this->autofillCost = ($response->usage->promptTokens * 0.03/1000) + ($response->usage->completionTokens * 0.06/1000);
+        $this->autofillCents = ($response->usage->promptTokens * 3/1000) + ($response->usage->completionTokens * 6/1000);
+        $this->autofillSeconds = microtime(true) - $startTime;
     }
 
     public function create()
@@ -119,6 +121,9 @@ class NewReceipt extends Component
     #[Layout('components.layouts.default')]
     public function render()
     {
-        return view('livewire.new-receipt.new-receipt');
+        return view('livewire.new-receipt.new-receipt', [
+            'envelopes' => auth()->user()->envelopes,
+            'categories' => Category::all()
+        ]);
     }
 }
