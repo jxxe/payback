@@ -28,7 +28,7 @@
 
             <x-card class="p-2 flex flex-col gap-2">
                 <x-input required wire:model="form.store" placeholder="Store"/>
-                <x-input required wire:model="form.amount" type="number" placeholder="Amount" prefix="$"/>
+                <x-input required wire:model="form.amount" type="text" inputmode="tel" placeholder="Amount" prefix="$"/>
 
                 <x-select required wire:model="form.category_id" placeholder="Category...">
                     @foreach($categories->where('qualified') as $category)
