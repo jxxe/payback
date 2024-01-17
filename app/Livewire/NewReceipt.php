@@ -68,7 +68,7 @@ class NewReceipt extends Component
                                 Return only JSON, without any additional text or Markdown formatting.
 
                                 Return the data as a JSON object with the following keys:
-                                - `store`: The name of the business or store the receipt is from. Correct it if it isn't properly spelled or capialized.
+                                - `store`: The name of the business or store the receipt is from. Correct it if it isn't properly spelled or capitalized.
                                 - `amount`: The grand total of the receipt without commas or currency symbols. If you are unsure, set this to an empty string; do not attempt to calculate it.
                                 - `description`: A general description of what was purchased.
                                 - `category`: Whichever category is most appropriate ($categories).
